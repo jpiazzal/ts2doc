@@ -1,0 +1,15 @@
+on: [push, pull_request]
+
+jobs:
+    CI:
+        name: Lint on ${{ matrix.os }}
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                os: [ubuntu-latest, macos-latest]
+        steps:
+            - uses: actions/checkout@v3
+            - name: npm install
+              run: npm ci
+            - name: npm run lint
+              run: npm run lint
