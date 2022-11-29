@@ -1,6 +1,6 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
-    ignorePatterns: ['node_modules', 'dist', '*.d.ts', 'coverage', 'jest.config.js'],
+    ignorePatterns: ['node_modules', 'dist', '*.d.ts', 'coverage', 'jest.config.js', 'bin'],
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',
@@ -16,7 +16,11 @@ module.exports = {
         'eslint-comments/no-unused-disable': 'off',
         'filenames/match-regex': 'off',
         'import/named': 'off', // doesn't work well
+        'import/namespace': 'off', // takes too long
+        'import/no-deprecated': 'off', // takes too long
+        'import/default': 'off', // takes too long
         'import/no-named-as-default': 'off', // doesn't work well
+        'import/no-named-as-default-member': 'off', // takes too long
         'import/no-unresolved': 'off',
         'unicorn/no-null': 'off',
         // ERRORS
@@ -58,7 +62,8 @@ module.exports = {
                     i: false,
                     str: false,
                     args: false,
-                    doc: false
+                    doc: false,
+                    docs: false
                 }
             }
         ]

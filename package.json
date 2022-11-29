@@ -9,6 +9,10 @@
         "ts2json",
         "ts2jsondoc"
     ],
+    "main": "dist/index.js",
+    "bin": {
+        "t2j": "./bin/t2j.js"
+    },
     "scripts": {
         "prepare": "husky install",
         "build": "tsc",
