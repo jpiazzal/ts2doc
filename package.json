@@ -9,6 +9,15 @@
     "ts2json",
     "ts2jsondoc"
   ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "typescript": "^4.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jpiazzal/ts2jsondoc.git"
