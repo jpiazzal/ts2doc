@@ -1,33 +1,43 @@
 {
-  "name": "ts2jsondoc",
-  "version": "0.0.1",
-  "description": "Parse exported declarations from typescript files into json, for documentation.",
-  "keywords": [
-    "typescript",
-    "documentation",
-    "json",
-    "ts2json",
-    "ts2jsondoc"
-  ],
-  "scripts": {
-    "build": "tsc"
-  },
-  "dependencies": {
-    "typescript": "^4.9.3"
-  },
-  "devDependencies": {
-    "@types/node": "^18.11.9"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jpiazzal/ts2jsondoc.git"
-  },
-  "author": {
-    "name": "Joël Piazzalunga-Lerat"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jpiazzal/ts2jsondoc/issues"
-  },
-  "homepage": "https://github.com/jpiazzal/ts2jsondoc#readme"
+    "name": "ts2jsondoc",
+    "version": "0.0.1",
+    "description": "Parse exported declarations from typescript files into json, for documentation.",
+    "keywords": [
+        "typescript",
+        "documentation",
+        "json",
+        "ts2json",
+        "ts2jsondoc"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint src/*"
+    },
+    "dependencies": {
+        "typescript": "^4.9.3"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.9",
+        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/parser": "^5.45.0",
+        "eslint": "^8.28.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-github": "^4.4.1",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-sonarjs": "^0.16.0",
+        "eslint-plugin-unicorn": "^45.0.1",
+        "prettier": "^2.8.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jpiazzal/ts2jsondoc.git"
+    },
+    "author": {
+        "name": "Joël Piazzalunga-Lerat"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jpiazzal/ts2jsondoc/issues"
+    },
+    "homepage": "https://github.com/jpiazzal/ts2jsondoc#readme"
 }

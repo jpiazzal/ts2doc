@@ -1,5 +1,3 @@
-interface IJsonDoc {}
-
-export default function ts2jsondoc(): IJsonDoc {
+export default function ts2jsondoc(): any {
     return {};
 }
