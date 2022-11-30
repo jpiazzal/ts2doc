@@ -19,7 +19,7 @@ function visit(node: ts.Node, checker: ts.TypeChecker): Declaration[] {
     return [];
 }
 
-export default function ts2doc(filesPath: string[], options?: ts.CompilerOptions): Declaration[] {
+export function ts2doc(filesPath: string[], options?: ts.CompilerOptions): Declaration[] {
     // Don't need particular options
     options = options || {};
 

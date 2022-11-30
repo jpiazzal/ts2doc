@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import ts2doc from '../src';
+import { ts2doc } from '../src';
 
 describe('ts2doc', () => {
     let resourcesBasePath: string;
