@@ -1,6 +1,6 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
-    ignorePatterns: ['node_modules', 'dist', '*.d.ts', 'coverage', 'jest.config.js', 'bin', 'resources'],
+    ignorePatterns: ['node_modules', 'dist', '*.d.ts', 'coverage', 'jest.config.js', 'bin', 'examples'],
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',

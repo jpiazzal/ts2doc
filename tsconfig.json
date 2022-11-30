@@ -9,5 +9,5 @@
     "outDir": "dist"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "__tests__", "dist"]
+  "exclude": ["node_modules", "tests", "dist", "coverage", "examples"]
 }
