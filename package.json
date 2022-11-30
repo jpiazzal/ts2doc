@@ -1,17 +1,17 @@
 {
-    "name": "ts2jsondoc",
+    "name": "ts2doc",
     "version": "0.0.1",
-    "description": "Parse exported declarations from typescript files into json, for documentation.",
+    "description": "Parse exported declarations from typescript files into object, for documentation.",
     "keywords": [
         "typescript",
         "documentation",
         "json",
         "ts2json",
-        "ts2jsondoc"
+        "ts2doc"
     ],
     "main": "dist/index.js",
     "bin": {
-        "t2j": "./bin/t2j.js"
+        "ts2doc": "./bin/ts2doc.js"
     },
     "scripts": {
         "prepare": "husky install",
@@ -41,14 +41,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/jpiazzal/ts2jsondoc.git"
+        "url": "git+https://github.com/jpiazzal/ts2doc.git"
     },
     "author": {
         "name": "Joël Piazzalunga-Lerat"
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/jpiazzal/ts2jsondoc/issues"
+        "url": "https://github.com/jpiazzal/ts2doc/issues"
     },
-    "homepage": "https://github.com/jpiazzal/ts2jsondoc#readme"
+    "homepage": "https://github.com/jpiazzal/ts2doc#readme"
 }

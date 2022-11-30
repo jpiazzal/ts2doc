@@ -1,3 +1,3 @@
-# ts2jsondoc
+# ts2doc
 
-Parse exported declarations from typescript files into json, for documentation.
+Parse exported declarations from typescript files into object, for documentation.
