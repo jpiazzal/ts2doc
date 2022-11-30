@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { getDocFromFiles } from '../src';
+import ts2doc from '../src';
 
 describe('Get doc from files', () => {
     let resourcesBasePath: string;
@@ -16,7 +16,7 @@ describe('Get doc from files', () => {
         const expectedVariablesDoc = JSON.parse(variablesJsonDoc);
 
         // Get doc from ts file
-        const variablesDoc = getDocFromFiles([path.join(resourcesBasePath, 'variables.ts')]);
+        const variablesDoc = ts2doc([path.join(resourcesBasePath, 'variables.ts')]);
 
         expect(variablesDoc).toEqual(expectedVariablesDoc);
     });
