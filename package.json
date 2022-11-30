@@ -15,6 +15,7 @@
     },
     "scripts": {
         "prepare": "husky install",
+        "pre-commit": "npm run lint && npm run test",
         "build": "tsc",
         "test": "jest",
         "lint": "eslint src/*"
