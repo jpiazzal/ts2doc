@@ -1,7 +1,7 @@
 import ts from 'typescript';
 
 import { Declaration } from './Declarations';
-import { serializeVariableStatement } from './serialize';
+import { serializeVariableStatement, serializeInterface } from './serialize';
 import { isNodeExported } from './utils';
 
 function visit(node: ts.Node, checker: ts.TypeChecker): Declaration[] {
@@ -13,6 +13,8 @@ function visit(node: ts.Node, checker: ts.TypeChecker): Declaration[] {
     // Eg: export const foo = 1;
     if (ts.isVariableStatement(node)) {
         return serializeVariableStatement(node, checker);
+    } else if (ts.isInterfaceDeclaration(node)) {
+        return [serializeInterface(node, checker)];
     }
     return [];
 }

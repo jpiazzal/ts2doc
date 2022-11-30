@@ -72,6 +72,7 @@ module.exports = {
             'error',
             {
                 replacements: {
+                    prop: false,
                     props: false,
                     i: false,
                     str: false,

@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Movie",
+        "kind": "interface",
+        "description": "Some description on interface",
+        "props": [
+            {
+                "name": "title",
+                "kind": "prop",
+                "type": "string",
+                "required": true,
+                "readOnly": false,
+                "description": "Some description on property"
+            },
+            {
+                "name": "year",
+                "kind": "prop",
+                "type": "number",
+                "required": true,
+                "readOnly": false,
+                "description": ""
+            },
+            {
+                "name": "rating",
+                "kind": "prop",
+                "type": "number",
+                "required": false,
+                "readOnly": false,
+                "description": ""
+            },
+            {
+                "name": "director",
+                "kind": "prop",
+                "type": "MovieDirector",
+                "required": true,
+                "readOnly": false,
+                "description": ""
+            },
+            {
+                "name": "actors",
+                "kind": "prop",
+                "type": "string[]",
+                "required": true,
+                "readOnly": false,
+                "description": ""
+            },
+            {
+                "name": "any",
+                "kind": "prop",
+                "type": "any",
+                "required": true,
+                "readOnly": false,
+                "description": ""
+            },
+            {
+                "name": "isAvailable",
+                "kind": "prop",
+                "type": "boolean",
+                "required": true,
+                "readOnly": true,
+                "description": ""
+            }
+        ]
+    }
+]

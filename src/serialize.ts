@@ -1,6 +1,7 @@
 import ts from 'typescript';
 
-import { VariableDeclaration } from './Declarations';
+import { VariableDeclaration, InterfaceDeclaration, PropDeclaration } from './Declarations';
+import { getJsDocDescription } from './utils';
 
 export function serializeVariableDeclaration(
     variableDeclaration: ts.VariableDeclaration,
@@ -19,4 +20,24 @@ export function serializeVariableStatement(
     return variableStatement.declarationList.declarations.map((variableDeclaration) => {
         return serializeVariableDeclaration(variableDeclaration, checker);
     });
+}
+
+export function serializeProp(prop: ts.PropertySignature, checker: ts.TypeChecker): PropDeclaration {
+    return {
+        name: prop.name.getText(),
+        kind: 'prop',
+        type: prop.type ? checker.typeToString(checker.getTypeFromTypeNode(prop.type)) : '',
+        required: !prop.questionToken,
+        readOnly: ts.getCombinedModifierFlags(prop) === ts.ModifierFlags.Readonly,
+        description: getJsDocDescription(prop as any) || ''
+    };
+}
+
+export function serializeInterface(node: ts.InterfaceDeclaration, checker: ts.TypeChecker): InterfaceDeclaration {
+    return {
+        name: node.name.getText(),
+        kind: 'interface',
+        description: getJsDocDescription(node as any) || '',
+        props: node.members.map((prop) => serializeProp(prop as ts.PropertySignature, checker))
+    };
 }
