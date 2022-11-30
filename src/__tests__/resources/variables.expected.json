@@ -1,0 +1,14 @@
+[
+    { "name": "str", "kind": "variable", "value": "\"Hello World\"" },
+    { "name": "nb", "kind": "variable", "value": "42" },
+    { "name": "bool", "kind": "variable", "value": "true" },
+    {
+        "name": "obj",
+        "kind": "variable",
+        "value": "{ a: number; b: number; c: number; }"
+    },
+    { "name": "arr", "kind": "variable", "value": "number[]" },
+    { "name": "a", "kind": "variable", "value": "1" },
+    { "name": "b", "kind": "variable", "value": "2" },
+    { "name": "c", "kind": "variable", "value": "3" }
+]

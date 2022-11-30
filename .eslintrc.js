@@ -1,6 +1,6 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
-    ignorePatterns: ['node_modules', 'dist', '*.d.ts', 'coverage', 'jest.config.js', 'bin'],
+    ignorePatterns: ['node_modules', 'dist', '*.d.ts', 'coverage', 'jest.config.js', 'bin', 'resources'],
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',
@@ -11,8 +11,22 @@ module.exports = {
         'prettier'
     ],
     plugins: ['@typescript-eslint', 'github', 'prettier', 'sonarjs'],
+    overrides: [
+        {
+            files: ['*.test.ts'],
+            plugins: ['jest'],
+            extends: ['plugin:jest/recommended'],
+            globals: {
+                __dirname: true
+            },
+            rules: {
+                'unicorn/prefer-module': 'off' // To be able to use __dirname
+            }
+        }
+    ],
     rules: {
         // OFF
+        'i18n-text/no-en': 'off',
         'eslint-comments/no-unused-disable': 'off',
         'filenames/match-regex': 'off',
         'import/named': 'off', // doesn't work well
