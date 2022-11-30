@@ -3,7 +3,7 @@ import path from 'node:path';
 
 import ts2doc from '../src';
 
-describe('Get doc from files', () => {
+describe('ts2doc', () => {
     let resourcesBasePath: string;
 
     beforeAll(() => {
