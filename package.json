@@ -15,9 +15,11 @@
         "ts2doc": "./bin/ts2doc.js"
     },
     "scripts": {
+        "prepublishOnly": "npm run build",
         "prepare": "husky install",
         "pre-commit": "npm run lint && npm run test",
         "build": "tsc",
+        "release": "npm run build && npm run lint && npm test",
         "test": "jest",
         "lint": "eslint src/*"
     },
