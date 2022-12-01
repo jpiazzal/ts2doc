@@ -22,7 +22,14 @@ ts2doc(filesPath: string[], options?: ts.CompilerOptions): Declaration[]
 
 ```ts
 // Movie.ts
+
+/**
+ * Interface description
+ */
 export interface Movie {
+    /**
+     * Property description
+     */
     title: string;
     year: number;
     actors: string[];
@@ -35,19 +42,26 @@ Will be parsed into:
 [
     {
         name: 'Movie',
-        type: 'interface',
+        kind: 'interface',
+        description: 'Interface description',
         props: [
             {
                 name: 'title',
-                type: 'string'
+                kind: 'prop',
+                type: 'string',
+                description: 'Property description'
             },
             {
                 name: 'year',
-                type: 'number'
+                kind: 'prop',
+                type: 'number',
+                description: ''
             },
             {
                 name: 'actors',
-                type: 'string[]'
+                kind: 'prop',
+                type: 'string[]',
+                description: ''
             }
         ]
     }
@@ -56,6 +70,18 @@ Will be parsed into:
 
 More examples can be found in [examples](./examples).
 
+## Supported declarations
+
+| Declaration | Supported |
+| ----------- | --------- |
+| `variable`  | ✅        |
+| `interface` | ✅        |
+| `function`  | ❌        |
+| `type`      | ❌        |
+| `enum`      | ❌        |
+| `class`     | ❌        |
+| `namespace` | ❌        |
+
 ## License
 
-MIT
+Distributed under the `MIT` License. See `LICENSE` file for more information.
