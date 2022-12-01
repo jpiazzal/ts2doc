@@ -2,6 +2,20 @@
 
 Parse exported declarations from typescript files into object, for documentation.
 
+## Installation
+
+As dependency:
+
+```bash
+npm install ts2doc
+```
+
+As devDependency:
+
+```bash
+npm install ts2doc --save-dev
+```
+
 ## Usage
 
 ```js
