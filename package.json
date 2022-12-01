@@ -9,7 +9,8 @@
         "ts2json",
         "ts2doc"
     ],
-    "main": "dist/index.js",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
     "bin": {
         "ts2doc": "./bin/ts2doc.js"
     },
@@ -40,6 +41,9 @@
         "prettier": "^2.8.0",
         "ts-jest": "^29.0.3"
     },
+    "files": [
+        "lib/**/*"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/jpiazzal/ts2doc.git"

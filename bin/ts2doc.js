@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { ts2doc } = require('../dist');
+const { ts2doc } = require('..');
 
 const arguments = process.argv.slice(2);
 
