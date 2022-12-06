@@ -1,5 +1,5 @@
 import { H3, Table, P, Code } from '@storybook/components';
-import { Declaration, InterfaceDeclaration } from '@ts2doc/json/dist/Declarations';
+import { Declaration, InterfaceDeclaration } from '@ts2doc/json';
 
 // FIXME: Not the best way, but for now it's ok
 import doc from '.cache/ts2doc/doc.json';

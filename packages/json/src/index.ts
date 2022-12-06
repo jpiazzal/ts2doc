@@ -4,6 +4,8 @@ import { Declaration } from './Declarations';
 import { serializeVariableStatement, serializeInterface } from './serialize';
 import { isNodeExported } from './utils';
 
+export * from './Declarations';
+
 function visit(node: ts.Node, checker: ts.TypeChecker): Declaration[] {
     // Only consider exported nodes
     if (!isNodeExported(node)) {
