@@ -10,8 +10,7 @@
     ],
     "scripts": {
         "prebuild": "rimraf dist",
-        "build": "rollup -c",
-        "test": "echo \"No tests specified\""
+        "build": "rollup -c"
     },
     "peerDependencies": {
         "@storybook/components": "^6.5.13",
