@@ -1,35 +1,16 @@
 {
-    "name": "ts2doc",
-    "version": "0.1.1",
-    "description": "Parse exported declarations from typescript files into object, for documentation.",
-    "keywords": [
-        "typescript",
-        "documentation",
-        "json",
-        "ts2json",
-        "ts2doc"
+    "name": "root",
+    "private": true,
+    "workspaces": [
+        "packages/*"
     ],
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
-    "bin": {
-        "ts2doc": "./bin/ts2doc.js"
-    },
     "scripts": {
-        "prepublishOnly": "npm run build",
         "prepare": "husky install",
         "pre-commit": "npm run lint && npm run test",
-        "all": "npm run build && npm run lint && npm test",
-        "build": "tsc",
-        "test": "jest",
-        "lint": "eslint src/*",
-        "release": "np"
-    },
-    "dependencies": {
-        "typescript": "^4.9.3"
+        "lint": "eslint packages/* --ext .js,.jsx,.ts,.tsx",
+        "test": "npm run test -w @ts2doc/json"
     },
     "devDependencies": {
-        "@types/jest": "^29.2.3",
-        "@types/node": "^18.11.9",
         "@typescript-eslint/eslint-plugin": "^5.45.0",
         "@typescript-eslint/parser": "^5.45.0",
         "eslint": "^8.28.0",
@@ -40,20 +21,14 @@
         "eslint-plugin-sonarjs": "^0.16.0",
         "eslint-plugin-unicorn": "^45.0.1",
         "husky": "^8.0.2",
-        "jest": "^29.3.1",
-        "np": "^7.6.2",
-        "prettier": "^2.8.0",
-        "ts-jest": "^29.0.3"
-    },
-    "files": [
-        "lib/**/*"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jpiazzal/ts2doc.git"
+        "prettier": "^2.8.0"
     },
     "author": {
         "name": "Joël Piazzalunga-Lerat"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jpiazzal/ts2doc.git"
     },
     "license": "MIT",
     "bugs": {

@@ -1,0 +1,6 @@
+{
+    "rules": {
+        "unicorn/prevent-abbreviations": "off",
+        "one-var": "off",
+    }
+}

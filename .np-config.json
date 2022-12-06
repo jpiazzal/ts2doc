@@ -1,6 +1,0 @@
-{
-    "yarn": false,
-    "publish": false,
-    "branch": "main",
-    "testScript": "all"
-}

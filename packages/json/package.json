@@ -1,0 +1,42 @@
+{
+    "name": "@ts2doc/json",
+    "version": "0.0.1",
+    "description": "Parse exported declarations from typescript files into json object, for documentation.",
+    "keywords": [
+        "typescript",
+        "documentation",
+        "json",
+        "ts2json",
+        "ts2doc"
+    ],
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/**/*"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "test": "jest"
+    },
+    "dependencies": {
+        "typescript": "^4.9.3"
+    },
+    "devDependencies": {
+        "@types/jest": "^29.2.3",
+        "@types/node": "^18.11.9",
+        "jest": "^29.3.1",
+        "ts-jest": "^29.0.3"
+    },
+    "author": {
+        "name": "Joël Piazzalunga-Lerat"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jpiazzal/ts2doc.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jpiazzal/ts2doc/issues"
+    },
+    "homepage": "https://github.com/jpiazzal/ts2doc/tree/main/packages/json#readme"
+}
