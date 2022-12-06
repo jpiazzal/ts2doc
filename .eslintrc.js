@@ -6,11 +6,13 @@ module.exports = {
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:github/recommended',
+        'plugin:jsx-a11y/recommended',
         'plugin:sonarjs/recommended',
         'plugin:unicorn/recommended',
-        'prettier'
+        'prettier',
+        'react-app'
     ],
-    plugins: ['@typescript-eslint', 'github', 'prettier', 'sonarjs'],
+    plugins: ['@typescript-eslint', 'github', 'jsx-a11y', 'prettier', 'sonarjs'],
     overrides: [
         {
             files: ['*.test.ts'],
@@ -39,6 +41,13 @@ module.exports = {
         'unicorn/no-null': 'off',
         // ERRORS
         '@typescript-eslint/no-unused-vars': 'error',
+        'import/extensions': [
+            'error',
+            'never',
+            {
+                json: 'always'
+            }
+        ],
         'import/order': [
             'error',
             {

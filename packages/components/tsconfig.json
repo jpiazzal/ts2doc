@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "outDir": "dist",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "sourceMap": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "src",
+    "resolveJsonModule": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["__tests__", "**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx"],
+}
