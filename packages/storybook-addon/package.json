@@ -1,0 +1,29 @@
+{
+    "name": "@ts2doc/storybook-addon",
+    "version": "0.0.1",
+    "description": "Storybook addon to document exported declarations from ts files",
+    "main": "lib/preset.js",
+    "files": [
+        "lib/preset.js"
+    ],
+    "scripts": {
+        "test": "echo \"No tests specified\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jpiazzal/ts2doc.git"
+    },
+    "author": {
+        "name": "Joël Piazzalunga-Lerat"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/jpiazzal/ts2doc/issues"
+    },
+    "homepage": "https://github.com/jpiazzal/ts2doc#readme",
+    "dependencies": {
+        "@ts2doc/json": "^0.0.1",
+        "fs-extra": "^11.1.0",
+        "glob": "^8.0.3"
+    }
+}

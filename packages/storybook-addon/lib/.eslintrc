@@ -1,0 +1,10 @@
+{
+    "env": {
+        "node": true
+    },
+    "rules": {
+        "import/no-commonjs": "off",
+        "unicorn/prefer-module": "off",
+        "@typescript-eslint/no-var-requires": "off"
+    }
+}
