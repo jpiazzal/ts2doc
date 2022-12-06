@@ -8,7 +8,7 @@
         "prepare": "husky install",
         "pre-commit": "npm run lint && npm run test",
         "lint": "eslint packages/* --ext .js,.jsx,.ts,.tsx",
-        "test": "npm run test -w @ts2doc/json"
+        "test": "npm run test --workspaces"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^5.45.0",
