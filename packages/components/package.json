@@ -1,6 +1,6 @@
 {
     "name": "@ts2doc/components",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Ts2doc components that display documentation from ts2doc json. It uses storybook components.",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -15,9 +15,9 @@
     },
     "peerDependencies": {
         "@storybook/components": "^6.5.13",
+        "@ts2doc/json": "^0.0.1",
         "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-        "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0",
-        "@ts2doc/json": "^0.0.1"
+        "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^23.0.2",

@@ -1,6 +1,6 @@
 {
     "name": "@ts2doc/json",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Parse exported declarations from typescript files into json object, for documentation.",
     "keywords": [
         "typescript",
