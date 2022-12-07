@@ -22,7 +22,6 @@ export default [
                 sourcemap: true
             }
         ],
-        external: ['.cache/ts2doc/doc.json'],
         plugins: [peerDepsExternal(), resolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' }), terser()]
     },
     {
