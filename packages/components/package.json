@@ -10,7 +10,8 @@
     ],
     "scripts": {
         "prebuild": "rimraf dist",
-        "build": "rollup -c"
+        "build": "rollup -c",
+        "build:watch": "rollup -c -w"
     },
     "peerDependencies": {
         "@storybook/components": "^6.5.13",
