@@ -6,7 +6,6 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "tsc",
         "start": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
     },
@@ -17,6 +16,7 @@
         "@storybook/manager-webpack4": "^6.5.14",
         "@storybook/react": "^6.5.13",
         "babel-loader": "^8.3.0",
+        "@ts2doc/storybook-addon": "*",
         "typescript": "^4.9.3"
     },
     "license": "MIT"

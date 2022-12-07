@@ -7,9 +7,6 @@ export interface Actor {
      * The age of the actor
      */
     age: number;
-    /**
-     * The date of birth of the actor
-     */
     birthDate: Date;
     /**
      * The place of birth of the actor
@@ -30,9 +27,6 @@ export interface Director {
      * The age of the director
      */
     age: number;
-    /**
-     * The date of birth of the director
-     */
     birthDate: Date;
     /**
      * The place of birth of the director
@@ -44,11 +38,14 @@ export interface Director {
     movies: Movie[];
 }
 
+/**
+ * A movie
+ */
 export interface Movie {
     /**
      * The title of the movie
      */
-    title: string;
+    readonly title: string;
     /**
      * The year the movie was released
      */
@@ -57,9 +54,6 @@ export interface Movie {
      * The rating of the movie
      */
     rating?: number;
-    /**
-     * The genres of the movie
-     */
     genres: string[];
     /**
      * The actors in the movie

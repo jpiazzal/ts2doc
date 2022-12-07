@@ -1,5 +1,13 @@
 import { Meta } from '@storybook/addon-docs';
+import { InterfaceDoc } from '@ts2doc/components';
+import doc from '.cache/ts2doc/doc.json';
 
 <Meta title="Docs/Interfaces" />
 
 # Interfaces
+
+<InterfaceDoc doc={doc.Director} />
+
+<InterfaceDoc doc={doc.Actor} title={'Actor'} description={'Some actor description'} />
+
+<InterfaceDoc doc={doc.Movie} />
