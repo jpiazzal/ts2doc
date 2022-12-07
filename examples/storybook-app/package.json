@@ -1,0 +1,13 @@
+{
+    "name": "storybook-app",
+    "private": true,
+    "version": "1.0.0",
+    "description": "Example app using storybook addon",
+    "scripts": {
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "typescript": "^4.9.3"
+    },
+    "license": "MIT"
+}
