@@ -1,23 +1,28 @@
 import { H3, Table, P, Code } from '@storybook/components';
-import { Declaration, InterfaceDeclaration } from '@ts2doc/json';
-
-// FIXME: Not the best way, but for now it's ok
-import doc from '.cache/ts2doc/doc.json';
+import { InterfaceDeclaration } from '@ts2doc/json';
 
 interface InterfaceDocProps {
-    name: string;
+    doc: InterfaceDeclaration;
     title?: string;
     description?: string;
 }
 
-export default function InterfaceDoc({ name, title = `${name} - Types properties`, description }: InterfaceDocProps) {
-    const interfaceDoc: InterfaceDeclaration = doc.find((d: Declaration) => d.name === name);
+export default function InterfaceDoc({
+    doc,
+    title = `${doc.name} - Types properties`,
+    description = doc?.description
+}: InterfaceDocProps) {
+    if (doc.kind !== 'interface') {
+        throw new Error('InterfaceDoc can only be used with interface, be sure to send the right kind.');
+    }
     return (
         <>
             <H3 className="sbdocs sbdocs-h3">{title}</H3>
-            <P className="sbdocs sbdocs-p" style={{ whiteSpace: 'pre-wrap' }}>
-                {description || interfaceDoc?.description}
-            </P>
+            {description && (
+                <P className="sbdocs sbdocs-p" style={{ whiteSpace: 'pre-wrap' }}>
+                    {description}
+                </P>
+            )}
             <Table className="sbdocs sbdocs-table">
                 <thead>
                     <tr>
@@ -28,7 +33,7 @@ export default function InterfaceDoc({ name, title = `${name} - Types properties
                     </tr>
                 </thead>
                 <tbody>
-                    {interfaceDoc?.props?.map((prop) => (
+                    {doc?.props?.map((prop) => (
                         <tr key={prop.name}>
                             <td>{prop.name}</td>
                             <td>
