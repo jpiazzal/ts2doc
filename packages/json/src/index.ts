@@ -1,40 +1,44 @@
 import ts from 'typescript';
 
-import { Declaration } from './Declarations';
+import { ExportedDeclarations } from './Declarations';
 import { serializeVariableStatement, serializeInterface } from './serialize';
 import { isNodeExported } from './utils';
 
 export * from './Declarations';
 
-function visit(node: ts.Node, checker: ts.TypeChecker): Declaration[] {
+function visit(node: ts.Node, checker: ts.TypeChecker): ExportedDeclarations {
     // Only consider exported nodes
     if (!isNodeExported(node)) {
-        return [];
+        return {};
     }
 
-    // Eg: export const foo = 1;
     if (ts.isVariableStatement(node)) {
+        // Eg: export const foo = 1;
         return serializeVariableStatement(node, checker);
     } else if (ts.isInterfaceDeclaration(node)) {
-        return [serializeInterface(node, checker)];
+        // Eg: export interface Foo { bar: string }
+        const interfaceSerialized = serializeInterface(node, checker);
+        return {
+            [interfaceSerialized.name]: interfaceSerialized
+        };
     }
-    return [];
+    return {};
 }
 
-export function ts2doc(filesPath: string[], options?: ts.CompilerOptions): Declaration[] {
+export function ts2doc(filesPath: string[], options?: ts.CompilerOptions): ExportedDeclarations {
     // Don't need particular options
     options = options || {};
 
     const program: ts.Program = ts.createProgram(filesPath, options);
     const checker = program.getTypeChecker();
-    let exportedDeclarations: Declaration[] = [];
+    let exportedDeclarations: ExportedDeclarations = {};
 
     // Visit every sourceFile in the program
     for (const sourceFile of program.getSourceFiles()) {
         if (!sourceFile.isDeclarationFile) {
             ts.forEachChild(sourceFile, (node: ts.Node) => {
                 const declaration = visit(node, checker);
-                exportedDeclarations = [...exportedDeclarations, ...declaration];
+                exportedDeclarations = { ...exportedDeclarations, ...declaration };
             });
         }
     }

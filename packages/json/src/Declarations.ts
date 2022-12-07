@@ -4,6 +4,10 @@ export interface Declaration {
     kind: 'variable' | 'interface' | 'prop';
 }
 
+export interface ExportedDeclarations {
+    [key: string]: Declaration;
+}
+
 export interface VariableDeclaration extends Declaration {
     value: string;
 }

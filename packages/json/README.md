@@ -53,8 +53,8 @@ export interface Movie {
 Will be parsed into:
 
 ```js
-[
-    {
+{
+    Movie: {
         name: 'Movie',
         kind: 'interface',
         description: 'Interface description',
@@ -79,7 +79,7 @@ Will be parsed into:
             }
         ]
     }
-];
+};
 ```
 
 More examples can be found in [examples](./examples).

@@ -1,5 +1,5 @@
-[
-    {
+{
+    "Movie": {
         "name": "Movie",
         "kind": "interface",
         "description": "Some description on interface",
@@ -44,14 +44,7 @@
                 "readOnly": false,
                 "description": ""
             },
-            {
-                "name": "any",
-                "kind": "prop",
-                "type": "any",
-                "required": true,
-                "readOnly": false,
-                "description": ""
-            },
+            { "name": "any", "kind": "prop", "type": "any", "required": true, "readOnly": false, "description": "" },
             {
                 "name": "isAvailable",
                 "kind": "prop",
@@ -62,4 +55,4 @@
             }
         ]
     }
-]
+}

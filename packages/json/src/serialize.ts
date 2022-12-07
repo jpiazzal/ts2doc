@@ -1,6 +1,6 @@
 import ts from 'typescript';
 
-import { VariableDeclaration, InterfaceDeclaration, PropDeclaration } from './Declarations';
+import { ExportedDeclarations, VariableDeclaration, InterfaceDeclaration, PropDeclaration } from './Declarations';
 import { getJsDocDescription } from './utils';
 
 export function serializeVariableDeclaration(
@@ -16,10 +16,13 @@ export function serializeVariableDeclaration(
 export function serializeVariableStatement(
     variableStatement: ts.VariableStatement,
     checker: ts.TypeChecker
-): VariableDeclaration[] {
-    return variableStatement.declarationList.declarations.map((variableDeclaration) => {
-        return serializeVariableDeclaration(variableDeclaration, checker);
-    });
+): ExportedDeclarations {
+    const exportedDeclarations: ExportedDeclarations = {};
+    for (const variableDeclaration of variableStatement.declarationList.declarations) {
+        const variableSerialized = serializeVariableDeclaration(variableDeclaration, checker);
+        exportedDeclarations[variableSerialized.name] = variableSerialized;
+    }
+    return exportedDeclarations;
 }
 
 export function serializeProp(prop: ts.PropertySignature, checker: ts.TypeChecker): PropDeclaration {
