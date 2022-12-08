@@ -2,6 +2,12 @@
     "name": "@ts2doc/storybook-addon",
     "version": "0.1.0",
     "description": "Storybook addon to document exported declarations from ts files",
+    "keywords": [
+        "typescript",
+        "documentation",
+        "storybook",
+        "ts2doc"
+    ],
     "main": "lib/preset.js",
     "files": [
         "lib/preset.js"
