@@ -58,7 +58,7 @@ function serializeJsDoc(symbol: ts.Symbol): JsDocTags {
                 const [href, ...text] = tagValue.split(/ |\|/);
                 jsDocTagsSerialized.links.push({
                     href,
-                    text: text.join(' ').trim() || null
+                    text: text.join(' ').trim()
                 });
                 break;
             }

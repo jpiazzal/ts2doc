@@ -14,7 +14,7 @@ export interface VariableDeclaration extends Declaration {
 
 export interface Link {
     href: string;
-    text: string | null;
+    text: string;
 }
 
 export interface JsDocTags {

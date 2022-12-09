@@ -9,6 +9,7 @@ interface MovieDirector {
 /**
  * Some description on interface
  * @link https://wikipedia.org/wiki/Film | Useful link
+ * @link https://wikipedia.org/wiki/Film
  */
 export interface Movie {
     /**
