@@ -13,7 +13,7 @@
         "build": "lerna run build",
         "build:watch": "lerna run build:watch",
         "test": "lerna run test",
-        "start": "lerna run start"
+        "start": "npm run build && lerna run start --scope=storybook-app"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^5.42.1",
