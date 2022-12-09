@@ -47,6 +47,7 @@ export interface Director {
 /**
  * A movie
  * @link https://wikipedia.org/wiki/Film | Useful link
+ * @link https://wikipedia.org/wiki/Film
  */
 export interface Movie {
     /**
@@ -60,6 +61,7 @@ export interface Movie {
     year: number;
     /**
      * The rating of the movie
+     * @link https://wikipedia.org/wiki/Film_rating_system Film rating system
      * @default 0
      */
     rating?: number;
