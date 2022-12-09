@@ -12,12 +12,24 @@ export interface VariableDeclaration extends Declaration {
     value: string;
 }
 
-export interface PropDeclaration extends Declaration {
+export interface Link {
+    href: string;
+    text: string | null;
+}
+
+export interface JsDocTags {
+    type?: string;
+    deprecated?: boolean;
+    links?: Link[];
+    default?: string;
+}
+
+export interface PropDeclaration extends Declaration, JsDocTags {
     type: string;
     required: boolean;
     readOnly: boolean;
 }
 
-export interface InterfaceDeclaration extends Declaration {
+export interface InterfaceDeclaration extends Declaration, JsDocTags {
     props: PropDeclaration[];
 }

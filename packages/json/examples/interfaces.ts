@@ -8,19 +8,30 @@ interface MovieDirector {
 
 /**
  * Some description on interface
+ * @link https://wikipedia.org/wiki/Film | Useful link
  */
 export interface Movie {
     /**
      * Some description on property
+     * @link https://www.imdb.com/title/tt0111161/ Best film ever
      */
     title: string;
+    /**
+     * @type {Date}
+     */
     year: number;
     rating?: number;
     director: MovieDirector;
     actors: string[];
+    /**
+     * @deprecated
+     */
     any: any;
+    /**
+     * @default true
+     */
     readonly isAvailable: boolean;
 
-    // The following syntax is not supported
+    // The following syntax is not supported yet
     // [key: string]: any;
 }

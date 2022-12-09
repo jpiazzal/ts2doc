@@ -3,6 +3,12 @@
         "name": "Movie",
         "kind": "interface",
         "description": "Some description on interface",
+        "links": [
+            {
+                "href": "https://wikipedia.org/wiki/Film",
+                "text": "Useful link"
+            }
+        ],
         "props": [
             {
                 "name": "title",
@@ -10,12 +16,18 @@
                 "type": "string",
                 "required": true,
                 "readOnly": false,
-                "description": "Some description on property"
+                "description": "Some description on property",
+                "links": [
+                    {
+                        "href": "https://www.imdb.com/title/tt0111161/",
+                        "text": "Best film ever"
+                    }
+                ]
             },
             {
                 "name": "year",
                 "kind": "prop",
-                "type": "number",
+                "type": "Date",
                 "required": true,
                 "readOnly": false,
                 "description": ""
@@ -44,14 +56,23 @@
                 "readOnly": false,
                 "description": ""
             },
-            { "name": "any", "kind": "prop", "type": "any", "required": true, "readOnly": false, "description": "" },
+            {
+                "name": "any",
+                "kind": "prop",
+                "type": "any",
+                "required": true,
+                "readOnly": false,
+                "description": "",
+                "deprecated": true
+            },
             {
                 "name": "isAvailable",
                 "kind": "prop",
                 "type": "boolean",
                 "required": true,
                 "readOnly": true,
-                "description": ""
+                "description": "",
+                "default": "true"
             }
         ]
     }
