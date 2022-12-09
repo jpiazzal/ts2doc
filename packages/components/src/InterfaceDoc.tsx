@@ -1,6 +1,8 @@
 import { H3, Table, P, Code } from '@storybook/components';
 import { InterfaceDeclaration } from '@ts2doc/json';
 
+import { Badge } from './Badge';
+import { Links } from './JsDoc';
 interface InterfaceDocProps {
     doc: InterfaceDeclaration;
     title?: string;
@@ -23,12 +25,14 @@ export default function InterfaceDoc({
                     {description}
                 </P>
             )}
+            {doc.links && <Links links={doc.links} />}
             <Table className="sbdocs sbdocs-table">
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>Type</th>
                         <th>Required</th>
+                        <th>Default</th>
                         <th>Description</th>
                     </tr>
                 </thead>
@@ -40,8 +44,15 @@ export default function InterfaceDoc({
                                 <Code>{prop.type}</Code>
                             </td>
                             <td style={{ textAlign: 'center' }}>{prop.required ? '✅' : ''}</td>
+                            <td style={{ textAlign: 'center' }}>{prop.default ? <Code>{prop.default}</Code> : '-'}</td>
                             <td>
-                                {prop.description ? <P style={{ whiteSpace: 'pre-wrap' }}>{prop.description}</P> : null}
+                                {prop.deprecated && <Badge status="danger">Deprecated</Badge>}
+                                {prop.description ? (
+                                    <P className="sbdocs sbdocs-p" style={{ whiteSpace: 'pre-wrap' }}>
+                                        {prop.description}
+                                    </P>
+                                ) : null}
+                                {prop.links && <Links links={prop.links} />}
                                 {prop.readOnly ? <Code>Read Only</Code> : null}
                             </td>
                         </tr>
