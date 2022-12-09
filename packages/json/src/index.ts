@@ -32,15 +32,22 @@ export function ts2doc(filesPath: string[], options?: ts.CompilerOptions): Expor
     const program: ts.Program = ts.createProgram(filesPath, options);
     const checker = program.getTypeChecker();
     let exportedDeclarations: ExportedDeclarations = {};
+    const filesParsed: string[] = [];
 
     // Visit every sourceFile in the program
     for (const sourceFile of program.getSourceFiles()) {
         if (!sourceFile.isDeclarationFile) {
+            filesParsed.push(sourceFile.fileName);
             ts.forEachChild(sourceFile, (node: ts.Node) => {
                 const declaration = visit(node, checker);
                 exportedDeclarations = { ...exportedDeclarations, ...declaration };
             });
         }
+    }
+
+    if (filesParsed.length !== filesPath.length) {
+        const filesNotParsed = filesPath.filter((file) => !filesParsed.includes(file));
+        throw new Error(`Unable to find following files: ${filesNotParsed.join(', ')}`);
     }
 
     return exportedDeclarations;
