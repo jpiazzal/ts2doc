@@ -123,6 +123,7 @@ More examples can be found in the [examples](examples/storybook-app/) folder.
 | Declaration | Supported |
 | ----------- | --------- |
 | `interface` | ✅        |
+| `JSDOC`     | ✅        |
 | `variable`  | ❌        |
 | `function`  | ❌        |
 | `type`      | ❌        |
@@ -130,12 +131,17 @@ More examples can be found in the [examples](examples/storybook-app/) folder.
 | `class`     | ❌        |
 | `namespace` | ❌        |
 
+JSDoc tags supported:
+
+-   `@type`
+-   `@link`
+-   `@default`
+-   `@deprecated`
+
 ## Roadmap
 
 -   [x] Add support for `interface`
--   [ ] Add support for JSDoc `@type`
--   [ ] Add support for JSDoc `@link`
--   [ ] Add support for JSDoc `@default`
+-   [x] Add support for JSDoc `@type`, `@link`, `@default` and `@deprecated`
 -   [ ] Add support for `variable`
 -   [ ] Add support for `enum`
 -   [ ] Add support for `type`
@@ -143,7 +149,7 @@ More examples can be found in the [examples](examples/storybook-app/) folder.
 -   [ ] Add support for `class`
 -   [ ] Add support for `namespace`
 
-If you want to contribute, feel free to open an issue or a PR.
+If you have a suggestion or you want to contribute, feel free to open an issue or a PR.
 
 ## Contributing
 
