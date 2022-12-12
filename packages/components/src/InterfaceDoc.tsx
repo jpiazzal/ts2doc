@@ -1,4 +1,4 @@
-import { H3, Table, P, Code } from '@storybook/components';
+import { H3, H4, Table, P, Code } from '@storybook/components';
 import { InterfaceDeclaration } from '@ts2doc/json';
 
 import { Badge } from './Badge';
@@ -9,11 +9,7 @@ interface InterfaceDocProps {
     description?: string;
 }
 
-export default function InterfaceDoc({
-    doc,
-    title = `${doc.name} - Types properties`,
-    description = doc?.description
-}: InterfaceDocProps) {
+export default function InterfaceDoc({ doc, title = doc.name, description = doc?.description }: InterfaceDocProps) {
     if (doc.kind !== 'interface') {
         throw new Error('InterfaceDoc can only be used with interface, be sure to send the right kind.');
     }
@@ -26,6 +22,12 @@ export default function InterfaceDoc({
                 </P>
             )}
             {doc.links && <Links links={doc.links} />}
+            <H4 className="sbdocs sbdocs-h4">Properties</H4>
+            {doc.extends && (
+                <P className="sbdocs sbdocs-p">
+                    <Code>{doc.name}</Code> extends <Code>{doc.extends.join('')}</Code>
+                </P>
+            )}
             <Table className="sbdocs sbdocs-table">
                 <thead>
                     <tr>
