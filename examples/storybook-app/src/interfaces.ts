@@ -1,3 +1,7 @@
+interface Media {
+    id: number;
+}
+
 export interface Actor {
     /**
      * The name of the actor
@@ -21,6 +25,9 @@ export interface Actor {
     roles: string[];
 }
 
+/**
+ * @link https://wikipedia.org/wiki/Film_Director
+ */
 export interface Director {
     /**
      * The name of the director
@@ -45,11 +52,10 @@ export interface Director {
 }
 
 /**
- * A movie
+ * A movie is a piece of media that is intended to be viewed as a film.
  * @link https://wikipedia.org/wiki/Film | Useful link
- * @link https://wikipedia.org/wiki/Film
  */
-export interface Movie {
+export interface Movie extends Media {
     /**
      * The title of the movie
      */
@@ -71,7 +77,7 @@ export interface Movie {
      */
     cast: Actor[];
     /**
-     * The director of the movie
+     * @deprecated
      */
     director: Director;
 }
