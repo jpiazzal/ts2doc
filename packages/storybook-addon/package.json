@@ -1,6 +1,6 @@
 {
     "name": "@ts2doc/storybook-addon",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "description": "Storybook addon to document exported declarations from ts files",
     "keywords": [
         "typescript",
@@ -26,8 +26,8 @@
     "homepage": "https://github.com/jpiazzal/ts2doc#readme",
     "dependencies": {
         "@storybook/components": "^6.5.13",
-        "@ts2doc/components": "^0.2.0",
-        "@ts2doc/json": "^0.2.1",
+        "@ts2doc/components": "^0.3.0",
+        "@ts2doc/json": "^0.3.0",
         "fs-extra": "^11.1.0",
         "glob": "^8.0.3",
         "react": "^18.2.0",
