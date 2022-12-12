@@ -8,6 +8,10 @@ export interface ExportedDeclarations {
     [key: string]: Declaration;
 }
 
+export interface HeritageDeclaration extends Declaration {
+    extends: string[] | null;
+}
+
 export interface VariableDeclaration extends Declaration {
     value: string;
 }
@@ -30,6 +34,6 @@ export interface PropDeclaration extends Declaration, JsDocTags {
     readOnly: boolean;
 }
 
-export interface InterfaceDeclaration extends Declaration, JsDocTags {
+export interface InterfaceDeclaration extends HeritageDeclaration, JsDocTags {
     props: PropDeclaration[];
 }

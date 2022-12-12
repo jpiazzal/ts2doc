@@ -104,6 +104,7 @@ export function serializeInterface(node: ts.InterfaceDeclaration, checker: ts.Ty
 
     return {
         name: node.name.getText(),
+        extends: node.heritageClauses?.[0]?.types.map((type) => type.expression.getText()) || null,
         kind: 'interface',
         description: getJsDocDescription(node as any) || '',
         props: node.members.map((prop) => serializeProp(prop as ts.PropertySignature, checker)),

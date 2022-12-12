@@ -1,6 +1,7 @@
 {
     "Movie": {
         "name": "Movie",
+        "extends": ["Media", "ParentInterface"],
         "kind": "interface",
         "description": "Some description on interface",
         "links": [
