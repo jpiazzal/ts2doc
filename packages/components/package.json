@@ -21,10 +21,12 @@
         "build:watch": "rollup -c -w"
     },
     "peerDependencies": {
-        "@storybook/components": "^6.5.13",
-        "@ts2doc/json": "^0.0.1",
         "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
         "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
+    },
+    "dependencies": {
+        "@storybook/components": "^6.5.13",
+        "@ts2doc/json": "^0.3.0"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^23.0.2",
