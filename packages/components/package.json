@@ -1,6 +1,6 @@
 {
     "name": "@ts2doc/components",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Ts2doc components that display documentation from ts2doc json. It uses storybook components.",
     "keywords": [
         "typescript",
