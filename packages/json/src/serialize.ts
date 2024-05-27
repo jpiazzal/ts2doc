@@ -88,7 +88,7 @@ export function serializeProp(prop: ts.PropertySignature, checker: ts.TypeChecke
     const type = prop.type ? checker.typeToString(checker.getTypeFromTypeNode(prop.type)) : '';
 
     return {
-        name: prop.name.getText(),
+        name: prop.name ? prop.name.getText() : '*',
         kind: 'prop',
         // JSDoc @type will override the true type
         type: jsDocTags.type || type,
