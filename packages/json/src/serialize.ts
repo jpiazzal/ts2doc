@@ -92,7 +92,7 @@ export function serializeProp(prop: ts.PropertySignature, checker: ts.TypeChecke
         kind: 'prop',
         // JSDoc @type will override the true type
         type: jsDocTags.type || type,
-        required: prop.name && !prop.questionToken,
+        required: !prop.questionToken,
         readOnly: ts.getCombinedModifierFlags(prop) === ts.ModifierFlags.Readonly,
         description: getJsDocDescription(prop as any) || '',
         ...jsDocTags

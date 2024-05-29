@@ -41,6 +41,5 @@ export interface Movie extends Media, ParentInterface {
      */
     readonly isAvailable: boolean;
 
-    // The following syntax is not supported yet
-    // [key: string]: any;
+    [key: string]: any;
 }
