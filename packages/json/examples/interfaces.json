@@ -78,6 +78,14 @@
                 "readOnly": true,
                 "description": "",
                 "default": "true"
+            },
+            {
+                "name": "*",
+                "kind": "prop",
+                "type": "any",
+                "required": false,
+                "readOnly": false,
+                "description": ""
             }
         ]
     }
