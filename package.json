@@ -10,7 +10,7 @@
         "pre-commit": "npm run lint && npm run test",
         "prepublishOnly": "npm run build",
         "publish": "lerna publish --no-private",
-        "lint": "eslint packages/* --ext .js,.jsx,.ts,.tsx",
+        "lint": "eslint packages/ --ext .js,.jsx,.ts,.tsx",
         "build": "lerna run build",
         "build:watch": "lerna run build:watch",
         "test": "lerna run test",
