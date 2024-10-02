@@ -25,7 +25,7 @@
     },
     "homepage": "https://github.com/jpiazzal/ts2doc#readme",
     "dependencies": {
-        "@storybook/components": "^8.3.4",
+        "@storybook/components": "^8.0.0",
         "@ts2doc/components": "^0.3.2",
         "@ts2doc/json": "^0.3.3",
         "fs-extra": "^11.1.0",
