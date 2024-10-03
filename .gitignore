@@ -28,5 +28,8 @@ node_modules
 .DS_Store
 Thumbs.db
 
+# Temporary files
+.nx/
+
 # Ignore built ts files
 dist
