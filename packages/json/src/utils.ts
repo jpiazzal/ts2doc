@@ -11,6 +11,7 @@ export function isNodeExported(node: ts.Node): boolean {
 /**
  * Return the description of a node if it has a JSDoc comment
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function getJsDocDescription(node: any): string | undefined {
     return node?.jsDoc?.[0]?.comment;
 }

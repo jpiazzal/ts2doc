@@ -35,11 +35,13 @@ export interface Movie extends Media, ParentInterface {
     /**
      * @deprecated
      */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     any: any;
     /**
      * @default true
      */
     readonly isAvailable: boolean;
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
 }

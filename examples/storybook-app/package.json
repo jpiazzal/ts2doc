@@ -3,21 +3,47 @@
     "private": true,
     "version": "1.0.0",
     "description": "Example app using storybook addon",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "type": "module",
     "scripts": {
-        "start": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "lint": "eslint .",
+        "preview": "vite preview",
+        "start": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "dependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
     },
     "devDependencies": {
-        "@babel/core": "^7.20.5",
-        "@storybook/addon-docs": "^6.5.14",
-        "@storybook/builder-webpack4": "^6.5.14",
-        "@storybook/manager-webpack4": "^6.5.14",
-        "@storybook/react": "^6.5.13",
-        "babel-loader": "^8.3.0",
-        "@ts2doc/storybook-addon": "*",
-        "typescript": "^4.9.3"
+        "@eslint/js": "^9.9.0",
+        "@storybook/addon-essentials": "^8.0.0",
+        "@storybook/addon-interactions": "^8.0.0",
+        "@storybook/addon-links": "^8.0.0",
+        "@storybook/addon-onboarding": "^8.0.0",
+        "@storybook/blocks": "^8.0.0",
+        "@storybook/react": "^8.0.0",
+        "@storybook/react-vite": "^8.0.0",
+        "@storybook/test": "^8.0.0",
+        "@types/react": "^18.3.3",
+        "@types/react-dom": "^18.3.0",
+        "@vitejs/plugin-react": "^4.3.1",
+        "eslint": "^9.9.0",
+        "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+        "eslint-plugin-react-refresh": "^0.4.9",
+        "eslint-plugin-storybook": "^0.9.0",
+        "globals": "^15.9.0",
+        "storybook": "^8.0.0",
+        "typescript": "^5.5.3",
+        "typescript-eslint": "^8.0.1",
+        "vite": "^5.4.1",
+        "@ts2doc/storybook-addon": "*"
+    },
+    "eslintConfig": {
+        "extends": [
+            "plugin:storybook/recommended"
+        ]
     },
     "license": "MIT"
 }

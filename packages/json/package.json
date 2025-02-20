@@ -20,7 +20,7 @@
         "test": "jest"
     },
     "dependencies": {
-        "typescript": "^4.9.3"
+        "typescript": "^5.5.3"
     },
     "devDependencies": {
         "@types/jest": "^29.2.3",

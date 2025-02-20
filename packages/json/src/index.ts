@@ -38,6 +38,7 @@ export function ts2doc(filesPath: string[], options?: ts.CompilerOptions): Expor
     for (const sourceFile of program.getSourceFiles()) {
         if (!sourceFile.isDeclarationFile) {
             filesParsed.push(sourceFile.fileName);
+            // eslint-disable-next-line no-loop-func
             ts.forEachChild(sourceFile, (node: ts.Node) => {
                 const declaration = visit(node, checker);
                 exportedDeclarations = { ...exportedDeclarations, ...declaration };

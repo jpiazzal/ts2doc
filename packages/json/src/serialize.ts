@@ -84,6 +84,7 @@ function serializeJsDoc(symbol: ts.Symbol): JsDocTags {
 
 export function serializeProp(prop: ts.PropertySignature, checker: ts.TypeChecker): PropDeclaration {
     // typescript types are not correct, symbol is present on PropertySignature
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const jsDocTags: JsDocTags = serializeJsDoc((prop as any).symbol);
     const type = prop.type ? checker.typeToString(checker.getTypeFromTypeNode(prop.type)) : '';
 
@@ -94,18 +95,21 @@ export function serializeProp(prop: ts.PropertySignature, checker: ts.TypeChecke
         type: jsDocTags.type || type,
         required: prop.name ? !prop.questionToken : false,
         readOnly: ts.getCombinedModifierFlags(prop) === ts.ModifierFlags.Readonly,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         description: getJsDocDescription(prop as any) || '',
         ...jsDocTags
     };
 }
 
 export function serializeInterface(node: ts.InterfaceDeclaration, checker: ts.TypeChecker): InterfaceDeclaration {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const jsDocTags: JsDocTags = serializeJsDoc((node as any).symbol);
 
     return {
         name: node.name.getText(),
         extends: node.heritageClauses?.[0]?.types.map((type) => type.expression.getText()) || null,
         kind: 'interface',
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         description: getJsDocDescription(node as any) || '',
         props: node.members.map((prop) => serializeProp(prop as ts.PropertySignature, checker)),
         ...jsDocTags

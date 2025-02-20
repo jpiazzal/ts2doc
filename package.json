@@ -10,7 +10,7 @@
         "pre-commit": "npm run lint && npm run test",
         "prepublishOnly": "npm run build",
         "publish": "lerna publish --no-private",
-        "lint": "eslint packages/* --ext .js,.jsx,.ts,.tsx",
+        "lint": "eslint packages/ --ext .js,.jsx,.ts,.tsx",
         "build": "lerna run build",
         "build:watch": "lerna run build:watch",
         "test": "lerna run test",
@@ -28,7 +28,7 @@
         "eslint-plugin-sonarjs": "^0.16.0",
         "eslint-plugin-unicorn": "^44.0.2",
         "husky": "^8.0.2",
-        "lerna": "^6.1.0",
+        "lerna": "^8.1.8",
         "prettier": "^2.8.0"
     },
     "author": {
